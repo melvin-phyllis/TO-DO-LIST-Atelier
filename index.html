@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TO DO LIST</title>
+    <link rel="stylesheet" href="src/output.css">
+  </head>
+  <body class="bg-gray-100 text-xl text-gray-800 my-50">
+    <div class="max-w-5xl mx-auto my-12 px-4">
+      <h1 class="text-center text-5xl font-bold tracking-tight mb-8">TO DO LIST</h1>
+
+      
+      <form  id="form" class="bg-blue-200/60 rounded-2xl p-5 shadow-sm">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+          <div>
+            <label for="tache" class="block text-base font-medium mb-1">Tache</label>
+            <input
+              type="text"
+              id="tache"
+              placeholder="Entrer la tache"
+              required
+              class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            />
+          </div>
+
+          <div>
+            <label for="descripton" class="block text-base font-medium mb-1">Description</label>
+            <input
+              type="text"
+              id="descripton"
+              placeholder="Entrer la description"
+              required
+              class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            />
+          </div>
+
+          <div>
+            <label for="deadline" class="block text-base font-medium mb-1">Deadline</label>
+            <input
+              type="time"
+              id="deadline"
+              required
+              class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            />
+          </div>
+
+          <div class="md:pt-6">
+            <button
+            type="submit"
+            id="btn_add"
+            class="w-full rounded-xl border border-gray-300 bg-white px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-emerald-500">
+            Soumettre
+          </button>
+
+          </div>
+        </div>
+      </form>
+
+      
+      <div class="mt-10 overflow-x-auto rounded-2xl border border-black/20 bg-white shadow-sm text-2xl">
+        <table class="min-w-full text-base">
+          <thead class="bg-gray-100/70">
+            <tr>
+              <th class="px-3 py-2 border-b text-left font-semibold">ID</th>
+              <th class="px-3 py-2 border-b text-left font-semibold">Tache</th>
+              <th class="px-3 py-2 border-b text-left font-semibold">Description</th>
+              <th class="px-3 py-2 border-b text-left font-semibold">Deadline</th>
+              <th class="px-3 py-2 border-b text-left font-semibold">Statut</th>
+              <th class="px-3 py-2 border-b text-left font-semibold">Action</th>
+            </tr>
+          </thead>
+
+          <tbody id="liste" class="[&>tr:nth-child(even)]:bg-gray-50/60">
+           
+          </tbody>
+
+          <tbody>
+            <tr class="bg-blue-300/40">
+              <td class="px-3 py-3 font-semibold">Taches</td>
+              <td colspan="2" class="px-3 py-3">
+                <div class="flex flex-col gap-1 text-center">
+                  <span class="rounded-lg border border-black/20 px-2 py-1">TERMINER</span>
+                  <span class="rounded-lg border border-black/20 px-2 py-1">EN COURS</span>
+                  <span class="rounded-lg border border-black/20 px-2 py-1">EN ATTENTE</span>
+                </div>
+              </td>
+              <td></td>
+              <td class="px-3 py-3">
+                <div class="flex flex-col gap-1 text-center">
+                  <span id="terminer" class="rounded-lg border border-black/20 px-2 py-1 ">0</span>
+                  <span id="en_cours" class="rounded-lg border border-black/20 px-2 py-1">0</span>
+                  <span id="en_attente" class="rounded-lg border border-black/20 px-2 py-1">0</span>
+                </div>
+              </td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script type="module" src="./src/js/main.js"></script>
+  </body>
+</html>
